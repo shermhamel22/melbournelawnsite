@@ -1,5 +1,6 @@
 import { Building2, TreeDeciduous, Flower2, Grid3X3, Lightbulb, Shrub } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -45,7 +46,13 @@ const Services = () => {
     <section id="services" className="py-20 md:py-28 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">What We Do</span>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
             Simple Services. Outstanding Results.
@@ -53,15 +60,18 @@ const Services = () => {
           <p className="text-muted-foreground text-lg">
             No complicated packages — just reliable lawn care that keeps your property looking great.
           </p>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={service.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group bg-card rounded-xl p-6 shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 flex flex-col"
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-300">
                 <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
@@ -75,7 +85,7 @@ const Services = () => {
               <Button variant="outline" size="sm" className="w-full" asChild>
                 <a href="#contact">{service.cta}</a>
               </Button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -19,7 +19,7 @@ const Header = () => {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-lg">M</span>
+              <span className="text-primary-foreground font-display font-bold text-lg">J</span>
             </div>
             <div className="hidden sm:block">
               <span className="font-display font-semibold text-lg text-foreground">Melbourne</span>
@@ -42,9 +42,9 @@ const Header = () => {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+13215551234" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <a href="tel:+13214198887" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
-              (321) 555-1234
+              (321) 419-8887
             </a>
             <Button variant="default" size="default" asChild>
               <a href="#contact">Get Free Quote</a>
@@ -75,9 +75,9 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <a href="tel:+13215551234" className="flex items-center gap-2 text-base font-medium text-muted-foreground">
+              <a href="tel:+13214198887" className="flex items-center gap-2 text-base font-medium text-muted-foreground">
                 <Phone className="w-4 h-4" />
-                (321) 555-1234
+                (321) 419-8887
               </a>
               <Button variant="default" className="w-full mt-2" asChild>
                 <a href="#contact">Get Free Quote</a>

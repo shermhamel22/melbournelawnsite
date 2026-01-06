@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -30,7 +31,13 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left - Contact Info */}
-          <div className="text-primary-foreground">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-primary-foreground"
+          >
             <span className="text-sm font-semibold text-accent uppercase tracking-wider">Get In Touch</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold mt-3 mb-6">
               Ready for a Better Lawn?
@@ -41,7 +48,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <a 
-                href="tel:+13215551234" 
+                href="tel:+13214198887" 
                 className="flex items-center gap-4 text-primary-foreground/90 hover:text-accent transition-colors group"
               >
                 <div className="w-12 h-12 rounded-lg bg-primary-foreground/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
@@ -49,7 +56,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <span className="block text-sm text-primary-foreground/60">Call us</span>
-                  <span className="font-semibold">(321) 555-1234</span>
+                  <span className="font-semibold">(321) 419-8887</span>
                 </div>
               </a>
 
@@ -76,10 +83,16 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right - Contact Form */}
-          <div className="bg-card rounded-2xl p-6 md:p-8 shadow-elevated">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="bg-card rounded-2xl p-6 md:p-8 shadow-elevated"
+          >
             <h3 className="font-display text-xl font-semibold text-foreground mb-6">
               Request Your Free Quote
             </h3>
@@ -108,7 +121,7 @@ const Contact = () => {
                     name="phone"
                     type="tel"
                     required
-                    placeholder="(321) 555-0000"
+                    placeholder="(321) 419-8887"
                     className="bg-background"
                   />
                 </div>
@@ -166,7 +179,7 @@ const Contact = () => {
                 )}
               </Button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
